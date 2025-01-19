@@ -22,29 +22,29 @@ class SuraDetailsWidget extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Stack to overlay the number on top of the icon
+          
           Stack(
-            alignment: Alignment.center, // Center the number inside the icon
+            alignment: Alignment.center, 
             children: [
-              // Sura number icon
+              
               Image.asset(
                 AssetsApp.suraNumberIcon,
-                width: 52, // Adjust the size of the icon as needed
+                width: 52, 
                 height: 52,
               ),
 
-              // Sura number text
+             
               Text(
                 "${surahData.id}",
-                style: TextStyle(
-                  fontSize: 16, // Adjust the font size as needed
+                style: const TextStyle(
+                  fontSize: 16, 
                   fontWeight: FontWeight.bold,
-                  color: Colors.white, // Adjust the text color as needed
+                  color: Colors.white, 
                 ),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Column(
@@ -58,7 +58,7 @@ class SuraDetailsWidget extends StatelessWidget {
                   color: ColorsApp.whiteColor,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
@@ -71,7 +71,7 @@ class SuraDetailsWidget extends StatelessWidget {
               )
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Text(
             surahData.arabicName,
             style: TextStyle(

@@ -24,14 +24,11 @@ class _RadioPageState extends State<RadioPage> {
       ),
       child: SingleChildScrollView(
         child: Column(
-         
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset(
-              'assets/images/logo.png', 
-             
+              'assets/images/logo.png',
             ),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: MaterialSegmentedControl(
@@ -52,14 +49,11 @@ class _RadioPageState extends State<RadioPage> {
                 },
               ),
             ),
-
-           
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: ListView.builder(
-                shrinkWrap: true, 
-                physics:
-                    const NeverScrollableScrollPhysics(), 
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(

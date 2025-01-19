@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:islami_app/core/service/local_storage.dart';
 import 'package:islami_app/core/service/local_storage_keys.dart';
@@ -34,10 +32,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black, // Set dark background
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
-          // PageView for scrolling pages
           PageView(
             controller: _pageController,
             onPageChanged: (int index) {
@@ -46,15 +43,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
               });
             },
             children: const [
-              FristIntroPage(), // Corrected typo: FristIntroPage -> FirstIntroPage
+              FristIntroPage(),
               SecondIntroPage(),
               ThirdIntroPage(),
               FourthIntroPage(),
               FifthIntroPage(),
             ],
           ),
-
-          // Bottom navigation with indicators and actions in the same line
           Positioned(
             right: 0,
             left: 0,
@@ -64,11 +59,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Conditionally render the Back action only on the second page
                   _currentPage > 0
                       ? TextButton(
                           onPressed: () {
-                            // Navigate to the previous page
                             _pageController.previousPage(
                               duration: const Duration(milliseconds: 300),
                               curve: Curves.easeInOut,
@@ -77,55 +70,45 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           child: Text(
                             "Back",
                             style: TextStyle(
-                              color: ColorsApp
-                                  .primaryColor, // Text color (replace with your primary color)
+                              color: ColorsApp.primaryColor,
                             ),
                           ),
                         )
-                      : const SizedBox(
-                          width: 48), // Placeholder to maintain layout balance
-
-                  // Page indicators
+                      : const SizedBox(width: 48),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
-                      5, // Number of pages
+                      5,
                       (index) => AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
                         margin: const EdgeInsets.symmetric(horizontal: 5),
-                        width: _currentPage == index ? 20 : 10, // Size change
+                        width: _currentPage == index ? 20 : 10,
                         height: 7,
                         decoration: BoxDecoration(
                           color: _currentPage == index
-                              ? ColorsApp
-                                  .primaryColor // Active color (replace with your primary color)
-                              : Colors.grey, // Inactive color
+                              ? ColorsApp.primaryColor
+                              : Colors.grey,
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
                     ),
                   ),
-
-                  // Next action on the right side for both pages
                   TextButton(
                     onPressed: () {
                       if (_currentPage < 4) {
-                        // Navigate to the next page
                         _pageController.nextPage(
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOut,
                         );
                       } else {
-                        // Final action (e.g., navigate to home or login screen)
-                        Navigator.pushReplacementNamed(context,
-                            LayoutPage.routeName); // Adjust "/home" as needed
+                        Navigator.pushReplacementNamed(
+                            context, LayoutPage.routeName);
                       }
                     },
                     child: Text(
                       _currentPage == 4 ? "Finish" : "Next",
                       style: TextStyle(
-                        color: ColorsApp
-                            .primaryColor, // Text color (replace with your primary color)
+                        color: ColorsApp.primaryColor,
                       ),
                     ),
                   ),

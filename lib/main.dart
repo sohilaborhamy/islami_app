@@ -24,12 +24,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: SplashPage.routeName,
         routes: {
-          SplashPage.routeName: (_) => SplashPage(),
-          FristIntroPage.routeName: (_) => FristIntroPage(),
-          SecondIntroPage.routeName: (_) => SecondIntroPage(),
-          OnboardingPage.routeName: (_) => OnboardingPage(),
-          LayoutPage.routeName: (_) => LayoutPage(),
-          SuraContentPage.routeName: (_) => SuraContentPage(),
+          SplashPage.routeName: (_) => const SplashPage(),
+          FristIntroPage.routeName: (_) => const FristIntroPage(),
+          SecondIntroPage.routeName: (_) => const SecondIntroPage(),
+          OnboardingPage.routeName: (_) => const OnboardingPage(),
+          LayoutPage.routeName: (_) => const LayoutPage(),
+          SuraContentPage.routeName: (_) => const SuraContentPage(),
         });
   }
 }
