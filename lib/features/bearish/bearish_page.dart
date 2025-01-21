@@ -53,66 +53,67 @@ class _BearishPageState extends State<BearishPage> {
         },
         
          
-          child: Column(
-           crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-             
-              Image.asset(
-                'assets/images/logo.png', 
+          child: SafeArea(
+            child: Column(
+             crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
                
-              ),
-             
-              Center(
-                child: Text(
-                  'سَبِّحِ اسْمَ رَبِّكَ الأعلى',
-                  style: TextStyle(
-                    fontSize: 35,
-                    fontWeight: FontWeight.w900,
-                    color: ColorsApp.whiteColor,
+                Image(
+                  image: AssetImage(AssetsApp.logo),
+                ),
+               
+                Center(
+                  child: Text(
+                    'سَبِّحِ اسْمَ رَبِّكَ الأعلى',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.w900,
+                      color: ColorsApp.whiteColor,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Center(
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            azkar[index],
-                            style: TextStyle(
-                              color: ColorsApp.whiteColor,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
+                const SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Center(
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              azkar[index],
+                              style: TextStyle(
+                                color: ColorsApp.whiteColor,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          Text(
-                            '$_counter',
-                            style: TextStyle(
-                              color: ColorsApp.whiteColor,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
+                            Text(
+                              '$_counter',
+                              style: TextStyle(
+                                color: ColorsApp.whiteColor,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      AnimatedRotation(
-                        turns: turns,
-                        duration: const Duration(milliseconds: 50),
-                        child: Image.asset(
-                          'assets/images/SebhaBody.png',
-                          fit: BoxFit.fill,
+                          ],
                         ),
-                      ),
-                    ],
+                        AnimatedRotation(
+                          turns: turns,
+                          duration: const Duration(milliseconds: 50),
+                          child: Image.asset(
+                            'assets/images/SebhaBody.png',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         
       ),
